@@ -1,0 +1,16 @@
+<div class="main">
+    <div class="header">
+        <h2>This is MFE Word Card Deck Component</h2>
+    </div>
+
+    <div *ngFor="let wordCardDeck of parentData">
+        <h3>{{ wordCardDeck.wordCardDeckName }}</h3>
+        <ul>
+            <li *ngFor="let wordCard of wordCardDeck.wordCardList">
+              {{ wordCard.name }}
+            </li>
+        </ul>
+    </div>
+    <input type="text" id="item-input" #newItem>
+    <button type="button" (click)="addNewItem(newItem.value)">Add to parent's list</button>
+</div>
