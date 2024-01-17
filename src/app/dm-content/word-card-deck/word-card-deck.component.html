@@ -1,6 +1,6 @@
 <div class="main">
     <div class="header">
-        <h2>This is MFE Word Card Deck Component</h2>
+        <h2>This is MFE Word Card Deck Component | GlobalState: {{globalState?.item}}</h2>
     </div>
 
     <div *ngFor="let wordCardDeck of parentData">
@@ -12,5 +12,8 @@
         </ul>
     </div>
     <input type="text" id="item-input" #newItem>
-    <button type="button" (click)="addNewItem(newItem.value)">Add to parent's list</button>
+    <button type="button" (click)="addNewItem(newItem.value)">Send To Parent</button>
+    <br/>
+    <input type="text" id="global-input" #newGlobalItem>
+    <button type="button" (click)="addNewGlobalItem(newGlobalItem.value)">Update Global Data</button>
 </div>

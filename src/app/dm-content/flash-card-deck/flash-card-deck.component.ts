@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { GlobalStateService } from 'src/app/services/global/global-state.service';
 
 @Component({
   selector: 'app-flash-card-deck',
@@ -7,9 +8,14 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class FlashCardDeckComponent implements OnInit {
   
+  globalState: any;
   @Input() parentData: any;
   
-  constructor() { }
+  constructor(private globalStateService: GlobalStateService) { 
+    this.globalStateService.getState().subscribe((state)=>{
+      this.globalState = state;
+    })
+  }
 
   ngOnInit(): void {
     console.log(this.parentData)
